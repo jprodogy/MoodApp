@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/happyEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Happy"
+        android:layout_marginTop="0dp"
+        style="@style/myStyle"
+        android:layout_marginLeft="50dp" />
+
+    <TextView
+        android:id="@+id/sadEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Sad"
+        android:layout_toRightOf="@+id/happyEmoji"
+        android:layout_marginTop="0dp"
+        style="@style/myStyle"
+        />
+
+    <TextView
+        android:id="@+id/angryEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Angry"
+        android:layout_toRightOf="@+id/sadEmoji"
+        android:layout_marginTop="0dp"
+        style="@style/myStyle"
+        />
+
+    <TextView
+        android:id="@+id/tiredEmoji"
+        style="@style/myStyle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stressedEmoji"
+        android:layout_alignBottom="@+id/stressedEmoji"
+        android:text="Tired" />
+
+    <TextView
+        android:id="@+id/stressedEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Stressed"
+        android:layout_toRightOf="@+id/tiredEmoji"
+        android:layout_below="@+id/happyEmoji"
+        style="@style/myStyle"
+        />
+
+    <TextView
+        android:id="@+id/depressedEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Depressed"
+        android:layout_toRightOf="@+id/stressedEmoji"
+        android:layout_below="@+id/happyEmoji"
+        style="@style/myStyle"
+        />
+
+    <TextView
+        android:id="@+id/nervousEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Nervous"
+        android:layout_below="@+id/tiredEmoji"
+        style="@style/myStyle"
+        />
+
+    <TextView
+        android:id="@+id/confusedEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Confused"
+        android:layout_below="@id/tiredEmoji"
+        android:layout_toRightOf="@+id/nervousEmoji"
+        style="@style/myStyle"
+        />
+
+
+    <TextView
+        android:id="@+id/mellowEmoji"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Mellow"
+        android:layout_toRightOf="@+id/confusedEmoji"
+        android:layout_below="@+id/tiredEmoji"
+        style="@style/myStyle"
+        />
+
+    <ImageView
+        android:id="@+id/angryEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/angry_emoji"
+        android:layout_below="@id/angryEmoji"
+        android:layout_alignLeft="@id/angryEmoji"
+        android:layout_alignRight="@id/angryEmoji"
+        />
+
+    <ImageView
+        android:id="@+id/depressedEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/depressed_emoji"
+        android:layout_below="@id/depressedEmoji"
+        android:layout_alignLeft="@id/depressedEmoji"
+        android:layout_alignRight="@id/depressedEmoji"
+        />
+
+    <ImageView
+        android:id="@+id/mellowEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/cool_emoji"
+        android:layout_below="@id/mellowEmoji"
+        android:layout_alignLeft="@id/mellowEmoji"
+        android:layout_alignRight="@id/mellowEmoji"
+        />
+
+    <ImageView
+        android:id="@+id/confusedEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/confusedEmoji"
+        android:layout_below="@+id/confusedEmoji"
+        android:src="@drawable/confused_emoji" />
+
+    <ImageView
+        android:id="@+id/nervousEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/nervous_emoji"
+        android:layout_below="@id/nervousEmoji"
+        android:layout_alignLeft="@id/nervousEmoji"
+        android:layout_alignRight="@id/nervousEmoji"
+        />
+
+    <ImageView
+        android:id="@+id/sadEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/crying_emoji"
+        android:layout_below="@id/sadEmoji"
+        android:layout_alignLeft="@id/sadEmoji"
+        android:layout_alignRight="@id/sadEmoji"
+        />
+
+    <ImageView
+        android:id="@+id/tiredEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/sleeping_emoji"
+        android:layout_below="@id/tiredEmoji"
+        android:layout_alignLeft="@id/tiredEmoji"
+        android:layout_alignRight="@id/tiredEmoji"
+        />
+
+    <ImageView
+        android:id="@+id/happyEmojiPic"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/smiling_emoji"
+        android:layout_below="@id/happyEmoji"
+        android:layout_alignLeft="@id/happyEmoji"
+        android:layout_alignRight="@id/happyEmoji"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:src="@drawable/stressed_emoji"
+        android:layout_below="@id/stressedEmoji"
+        android:layout_alignLeft="@id/stressedEmoji"
+        android:layout_alignRight="@id/stressedEmoji"
+        android:id="@+id/imageView" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/happyEmojiPic"
+        android:layout_below="@+id/happyEmojiPic"
+        android:layout_marginStart="32dp"
+        android:id="@+id/happyButton" />
+
+    <RadioButton
+        android:id="@+id/sadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sadEmojiPic"
+        android:layout_marginLeft="184dp" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/angryButton"
+        android:layout_below="@+id/depressedEmojiPic"
+        android:id="@+id/depressedButton" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_marginLeft="184dp"
+        android:id="@+id/stressedButton" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/happyButton"
+        android:layout_below="@+id/tiredEmojiPic"
+        android:id="@+id/tiredButton" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/angryEmojiPic"
+        android:layout_below="@+id/angryEmojiPic"
+        android:layout_marginStart="34dp"
+        android:id="@+id/angryButton" />
+
+    <RadioButton
+        android:id="@+id/mellowButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/depressedButton"
+        android:layout_below="@+id/mellowEmojiPic" />
+
+    <RadioButton
+        android:id="@+id/nervousButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/tiredButton"
+        android:layout_below="@+id/nervousEmojiPic" />
+
+    <RadioButton
+        android:id="@+id/confusedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="184dp"
+        android:layout_below="@+id/confusedEmojiPic" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_below="@id/confusedEmoji"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="155dp"
+        android:id="@+id/button" />
+
+
+</RelativeLayout>
