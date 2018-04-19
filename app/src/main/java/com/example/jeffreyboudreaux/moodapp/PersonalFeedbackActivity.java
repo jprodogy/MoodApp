@@ -33,7 +33,8 @@ public class PersonalFeedbackActivity extends AppCompatActivity {
 
         TextView encTxt = (TextView) findViewById(R.id.encouragementView);
         TextView feeTxt = (TextView) findViewById(R.id.feedbackView);
-        encTxt.setText(RecordMoodActivity.Enc.getEnc());
+        encTxt.setText(RecordMoodActivity.enc.getEnc());
+        feeTxt.setText(RecordMoodActivity.fee.getFeed());
 
     }
 

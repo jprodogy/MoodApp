@@ -251,7 +251,8 @@
         android:layout_below="@id/confusedEmoji"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="155dp"
-        android:id="@+id/button" />
+        android:id="@+id/button"
+        android:onClick="MoodSelect"/>
 
 
 </RelativeLayout>

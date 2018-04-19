@@ -1,5 +1,6 @@
 package com.example.jeffreyboudreaux.moodapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,7 +18,8 @@ import java.io.FileNotFoundException;
  */
 
 public class RecordMoodActivity extends AppCompatActivity {
-    public static Encouragements Enc;
+    public static Encouragements enc;
+    public static Feedback fee;
     Button[] btns = new Button[9];
 
 
@@ -46,7 +48,8 @@ public class RecordMoodActivity extends AppCompatActivity {
         btns[8] = (Button) findViewById(R.id.mellowButton);
 
         try {
-            Enc = new Encouragements();
+            enc = new Encouragements();
+            fee = new Feedback();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -77,9 +80,12 @@ public class RecordMoodActivity extends AppCompatActivity {
     public void MoodSelect(View v){
         for (int i = 0; i < btns.length; i++) {
             if (v == btns[i]){
-                Enc.setEnc(i);
+                enc.setEnc(i);
+                fee.setFeed(i);
             }
         }
+        Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
+        this.startActivity(myIntent);
     }
 
 
