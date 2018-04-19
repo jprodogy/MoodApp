@@ -13,6 +13,7 @@ import java.util.Scanner;
 
 public class Encouragements {
     private Map<Integer, String[]> encMap;
+    private String encourage;
 
     public Encouragements() throws FileNotFoundException {
         Scanner filereader = new Scanner(new File("Encouragements.csv"));
@@ -24,10 +25,13 @@ public class Encouragements {
         }
     }
 
-    public String getEnc(int i){
+    public void setEnc(int i){
         Random rand = new Random();
         String[] encList = encMap.get(i);
-        String encourage = encList[rand.nextInt()];
+        encourage = encList[rand.nextInt()];
+    }
+
+    public String getEnc(){
         return encourage;
     }
 }

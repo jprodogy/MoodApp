@@ -8,23 +8,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-
-import java.io.FileNotFoundException;
+import android.widget.TextView;
 
 /**
- * Created by jeffreyboudreaux on 4/10/18.
+ * Created by jeffreyboudreaux on 4/18/18.
  */
 
-public class RecordMoodActivity extends AppCompatActivity {
-    public static Encouragements Enc;
-    Button[] btns = new Button[9];
-
+public class PersonalFeedbackActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record_mood);
+        setContentView(R.layout.activity_feedback);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -35,21 +30,10 @@ public class RecordMoodActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        btns[0] = (Button) findViewById(R.id.happyButton);
-        btns[1] = (Button) findViewById(R.id.sadButton);
-        btns[2] = (Button) findViewById(R.id.angryButton);
-        btns[3] = (Button) findViewById(R.id.tiredButton);
-        btns[4] = (Button) findViewById(R.id.stressedButton);
-        btns[5] = (Button) findViewById(R.id.depressedButton);
-        btns[6] = (Button) findViewById(R.id.nervousButton);
-        btns[7] = (Button) findViewById(R.id.confusedButton);
-        btns[8] = (Button) findViewById(R.id.mellowButton);
 
-        try {
-            Enc = new Encouragements();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        TextView encTxt = (TextView) findViewById(R.id.encouragementView);
+        TextView feeTxt = (TextView) findViewById(R.id.feedbackView);
+        encTxt.setText(RecordMoodActivity.Enc.getEnc());
 
     }
 
@@ -71,17 +55,9 @@ public class RecordMoodActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-        return super.onOptionsItemSelected(item);
-    }
 
-    public void MoodSelect(View v){
-        for (int i = 0; i < btns.length; i++) {
-            if (v == btns[i]){
-                Enc.setEnc(i);
-            }
-        }
+        return super.onOptionsItemSelected(item);
     }
 
 
 }
-
