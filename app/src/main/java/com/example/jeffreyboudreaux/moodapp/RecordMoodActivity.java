@@ -8,12 +8,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+
+import java.io.FileNotFoundException;
 
 /**
  * Created by jeffreyboudreaux on 4/10/18.
  */
 
 public class RecordMoodActivity extends AppCompatActivity {
+    private Encouragements Enc;
+    Button[] btns = new Button[9];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +27,6 @@ public class RecordMoodActivity extends AppCompatActivity {
         setContentView(R.layout.record_mood_activity);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +35,22 @@ public class RecordMoodActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        btns[0] = (Button) findViewById(R.id.happyButton);
+        btns[1] = (Button) findViewById(R.id.sadButton);
+        btns[2] = (Button) findViewById(R.id.angryButton);
+        btns[3] = (Button) findViewById(R.id.tiredButton);
+        btns[4] = (Button) findViewById(R.id.stressedButton);
+        btns[5] = (Button) findViewById(R.id.depressedButton);
+        btns[6] = (Button) findViewById(R.id.nervousButton);
+        btns[7] = (Button) findViewById(R.id.confusedButton);
+        btns[8] = (Button) findViewById(R.id.mellowButton);
+
+        try {
+            Enc = new Encouragements();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
@@ -51,6 +72,14 @@ public class RecordMoodActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void MoodSelect(View v){
+        for (int i = 0; i < btns.length; i++) {
+            if (v == btns[i]){
+                Enc.getEnc(i);
+            }
+        }
     }
 
 
