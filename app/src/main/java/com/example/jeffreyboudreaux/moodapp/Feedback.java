@@ -15,7 +15,7 @@ public class Feedback {
     private String feed;
 
     public Feedback() throws FileNotFoundException {
-        Scanner filereader = new Scanner(new File("Feedback.csv"));
+        Scanner filereader = new Scanner(new File("feedback.csv"));
         int i = 0;
         while(filereader.hasNextLine()){
             String[] info = filereader.nextLine().split(",");
@@ -27,7 +27,7 @@ public class Feedback {
     public void setFeed(int i){
         Random rand = new Random();
         String[] encList = feeMap.get(i);
-        feed = encList[rand.nextInt()];
+        feed = encList[rand.nextInt(encList.length)];
     }
 
     public String getFeed(){

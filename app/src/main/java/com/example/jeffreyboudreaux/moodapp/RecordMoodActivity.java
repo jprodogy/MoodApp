@@ -6,10 +6,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 
 import java.io.FileNotFoundException;
 
@@ -20,14 +22,14 @@ import java.io.FileNotFoundException;
 public class RecordMoodActivity extends AppCompatActivity {
     public static Encouragements enc;
     public static Feedback fee;
-    Button[] btns = new Button[9];
+    RadioButton[] btns = new RadioButton[9];
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_mood);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -36,26 +38,29 @@ public class RecordMoodActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
-        btns[0] = (Button) findViewById(R.id.happyButton);
-        btns[1] = (Button) findViewById(R.id.sadButton);
-        btns[2] = (Button) findViewById(R.id.angryButton);
-        btns[3] = (Button) findViewById(R.id.tiredButton);
-        btns[4] = (Button) findViewById(R.id.stressedButton);
-        btns[5] = (Button) findViewById(R.id.depressedButton);
-        btns[6] = (Button) findViewById(R.id.nervousButton);
-        btns[7] = (Button) findViewById(R.id.confusedButton);
-        btns[8] = (Button) findViewById(R.id.mellowButton);
+        });*/
+        btns[0] = (RadioButton) findViewById(R.id.happyButton);
+        btns[1] = (RadioButton) findViewById(R.id.sadButton);
+        btns[2] = (RadioButton) findViewById(R.id.angryButton);
+        btns[3] = (RadioButton) findViewById(R.id.tiredButton);
+        btns[4] = (RadioButton) findViewById(R.id.stressedButton);
+        btns[5] = (RadioButton) findViewById(R.id.depressedButton);
+        btns[6] = (RadioButton) findViewById(R.id.nervousButton);
+        btns[7] = (RadioButton) findViewById(R.id.confusedButton);
+        btns[8] = (RadioButton) findViewById(R.id.mellowButton);
+
 
         try {
-            enc = new Encouragements();
+            enc = new Encouragements(this);
             fee = new Feedback();
+            Log.w("MainActivity","created Encouragements & Feedback");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
     }
 
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -71,21 +76,22 @@ public class RecordMoodActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_record) {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     public void MoodSelect(View v){
-        for (int i = 0; i < btns.length; i++) {
-            if (v == btns[i]){
+        for (int i = 0; i < btns.length - 1; i++) {
+            if (btns[i].isChecked()){
                 enc.setEnc(i);
                 fee.setFeed(i);
+                Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
+                this.startActivity(myIntent);
             }
         }
-        Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
-        this.startActivity(myIntent);
+
     }
 
 
