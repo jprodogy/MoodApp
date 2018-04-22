@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Created by jeffreyboudreaux on 4/10/18.
@@ -52,9 +53,9 @@ public class RecordMoodActivity extends AppCompatActivity {
 
         try {
             enc = new Encouragements(this);
-            fee = new Feedback();
+            fee = new Feedback(this);
             Log.w("MainActivity","created Encouragements & Feedback");
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 

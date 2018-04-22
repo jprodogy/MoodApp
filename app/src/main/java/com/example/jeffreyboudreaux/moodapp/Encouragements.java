@@ -29,12 +29,24 @@ public class Encouragements {
         context = current;
         InputStream ip = context.getResources().openRawResource(R.raw.encouragements);
         BufferedReader bReader = new BufferedReader(new InputStreamReader(ip, Charset.defaultCharset()));
-        int i = 0;
-        /*while(bReader.){
-            String[] info = filereader.nextLine().split(",");
-            encMap.put(i, info);
-            i++;
-        }*/
+
+        try {
+            bReader.readLine();
+            String line;
+
+            int i = 0;
+            while((line = bReader.readLine()) != null){
+                String[] info = line.split(",");
+                encMap.put(i,info);
+                i++;
+
+            }
+            bReader.close();
+
+        }catch (NullPointerException e){
+
+        }
+
     }
 
     public void setEnc(int i){
