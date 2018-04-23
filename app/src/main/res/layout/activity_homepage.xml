@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background_id"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:id="@+id/openingLabel"
+        style="@style/LabelStyle"
+        android:text="@string/strOpeningMssg1"
+        android:textSize="@dimen/dimenMainText"
+        android:layout_marginTop="65dp"
+    />
+
+    <TextView
+        android:id="@+id/openingWords"
+        style="@style/LabelStyle"
+        android:text="@string/strOpeningMssg2"
+        android:textSize="@dimen/dimenSubText"
+        android:layout_marginTop="350dp"
+        />
+
+</RelativeLayout>
