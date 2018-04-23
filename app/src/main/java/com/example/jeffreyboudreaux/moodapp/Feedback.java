@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -27,6 +28,7 @@ public class Feedback {
         context = current;
         InputStream ip = context.getResources().openRawResource(R.raw.feedback);
         BufferedReader bReader = new BufferedReader(new InputStreamReader(ip, Charset.defaultCharset()));
+        feeMap = new HashMap<>();
 
         try {
             bReader.readLine();
@@ -45,12 +47,8 @@ public class Feedback {
 
     public void setFeed(int i){
         Random rand = new Random();
-        try {
-            String[] encList = feeMap.get(i);
-            feed = encList[rand.nextInt(encList.length)];
-        }catch(NullPointerException e){
-
-        }
+        String[] encList = feeMap.get(i);
+        feed = encList[rand.nextInt(encList.length)];
 
     }
 

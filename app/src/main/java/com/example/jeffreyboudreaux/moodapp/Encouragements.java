@@ -10,8 +10,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -29,11 +31,9 @@ public class Encouragements {
         context = current;
         InputStream ip = context.getResources().openRawResource(R.raw.encouragements);
         BufferedReader bReader = new BufferedReader(new InputStreamReader(ip, Charset.defaultCharset()));
-
+        encMap = new HashMap<>();
         try {
-            bReader.readLine();
             String line;
-
             int i = 0;
             while((line = bReader.readLine()) != null){
                 String[] info = line.split(",");
@@ -41,6 +41,7 @@ public class Encouragements {
                 i++;
 
             }
+
             bReader.close();
 
         }catch (NullPointerException e){
@@ -49,10 +50,11 @@ public class Encouragements {
 
     }
 
-    public void setEnc(int i){
+    public void setEnc(int i) throws InvocationTargetException{
         Random rand = new Random();
         String[] encList = encMap.get(i);
         encourage = encList[rand.nextInt(encList.length)];
+
     }
 
     public String getEnc(){

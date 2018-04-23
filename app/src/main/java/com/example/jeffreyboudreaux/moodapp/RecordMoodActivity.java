@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * Created by jeffreyboudreaux on 4/10/18.
@@ -83,9 +84,10 @@ public class RecordMoodActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }*/
 
-    public void MoodSelect(View v){
-        for (int i = 0; i < btns.length - 1; i++) {
+    public void MoodSelect(View v) throws InvocationTargetException {
+        for (int i = 0; i < btns.length; i++) {
             if (btns[i].isChecked()){
+                Log.w("MainActivity", String.valueOf(i));
                 enc.setEnc(i);
                 fee.setFeed(i);
                 Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
