@@ -1,6 +1,5 @@
 package com.example.jeffreyboudreaux.moodapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,27 +9,21 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RadioButton;
+import android.widget.TextView;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 /**
- * Created by jeffreyboudreaux on 4/10/18.
+ * Created by jeffreyboudreaux on 4/18/18.
  */
 
-public class RecordMoodActivity extends AppCompatActivity {
-    public static Encouragements enc;
-    public static Feedback fee;
-    RadioButton[] btns = new RadioButton[9];
-
+public class PersonalFeedbackActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record_mood);
-       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_feedback);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,24 +33,19 @@ public class RecordMoodActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-        btns[0] = (RadioButton) findViewById(R.id.happyButton);
-        btns[1] = (RadioButton) findViewById(R.id.sadButton);
-        btns[2] = (RadioButton) findViewById(R.id.angryButton);
-        btns[3] = (RadioButton) findViewById(R.id.tiredButton);
-        btns[4] = (RadioButton) findViewById(R.id.stressedButton);
-        btns[5] = (RadioButton) findViewById(R.id.depressedButton);
-        btns[6] = (RadioButton) findViewById(R.id.nervousButton);
-        btns[7] = (RadioButton) findViewById(R.id.confusedButton);
-        btns[8] = (RadioButton) findViewById(R.id.mellowButton);
 
+        TextView encTxt = (TextView) findViewById(R.id.encouragementView);
+        TextView feeTxt = (TextView) findViewById(R.id.feedbackView);
 
         try {
-            enc = new Encouragements(this);
-            fee = new Feedback(this);
+            String d = RecordMoodActivity.enc.getEnc();
+            encTxt.setText(d);
             Log.w("MainActivity","created Encouragements & Feedback");
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        }catch (NullPointerException npe){
+            Log.w("PersonalFeedbackActvity", "It did not work");
         }
+
 
     }
 
@@ -80,21 +68,10 @@ public class RecordMoodActivity extends AppCompatActivity {
         if (id == R.id.action_record) {
             return true;
         }
+
         return super.onOptionsItemSelected(item);
-    }*/
-
-    public void MoodSelect(View v){
-        for (int i = 0; i < btns.length - 1; i++) {
-            if (btns[i].isChecked()){
-                enc.setEnc(i);
-                fee.setFeed(i);
-                Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
-                this.startActivity(myIntent);
-            }
-        }
-
     }
+    */
 
 
 }
-
