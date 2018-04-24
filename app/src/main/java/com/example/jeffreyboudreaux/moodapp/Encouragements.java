@@ -12,6 +12,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -26,14 +27,13 @@ public class Encouragements {
     private Context context;
 
     public Encouragements(Context current) throws IOException {
+        encMap = new HashMap<>();
         context = current;
         InputStream ip = context.getResources().openRawResource(R.raw.encouragements);
         BufferedReader bReader = new BufferedReader(new InputStreamReader(ip, Charset.defaultCharset()));
 
         try {
-            bReader.readLine();
             String line;
-
             int i = 0;
             while((line = bReader.readLine()) != null){
                 String[] info = line.split(",");
