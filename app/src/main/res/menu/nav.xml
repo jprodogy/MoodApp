@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_homepage"
+        android:icon="@drawable/icon_menu_homepage"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_viewRecords"
+        android:icon="@drawable/icon_menu_view_records"
+        android:title="View Records" />
+
+    <item
+        android:id="@+id/nav_addRecord"
+        android:icon="@drawable/icon_menu_record"
+        android:title="Record Mood" />
+
+
+</menu>

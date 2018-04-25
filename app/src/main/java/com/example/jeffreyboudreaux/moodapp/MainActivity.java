@@ -36,19 +36,25 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         switch (id) {
-            case R.id.action_record:
+            case R.id.nav_addRecord:
                 Intent insertIntent = new Intent(this, RecordMoodActivity.class);
                 this.startActivity(insertIntent);
+                return true;
+            case R.id.nav_viewRecords:
+                Intent historyIntent = new Intent(this, MoodHistory.class);
+                this.startActivity(historyIntent);
+                return true;
+            case R.id.nav_homepage:
+                Intent mainIntent = new Intent(this, MainActivity.class);
+                this.startActivity(mainIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
