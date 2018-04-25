@@ -1,5 +1,4 @@
 package com.example.jeffreyboudreaux.moodapp;
-
 import android.content.Context;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
@@ -15,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-
 public class Encouragements {
     private Map<Integer, String[]> encMap;
     private String encourage;
