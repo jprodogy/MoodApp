@@ -39,9 +39,7 @@ public class RecordMoodActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
     public void MoodSelect(View v){
         for (int i = 0; i < btns.length - 1; i++) {
             if (btns[i].isChecked()){
