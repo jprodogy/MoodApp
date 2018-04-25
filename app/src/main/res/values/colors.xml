@@ -6,4 +6,7 @@
     
     <color name="colorMainText">#000000</color>
     <color name="colorButton">#D3D3D3</color>
+    <color name="colorBar">#967BB6</color>
+    <color name="colorNavBackground">#FFFFFF</color>
+    <color name="colorIconTint">#606060</color>
 </resources>

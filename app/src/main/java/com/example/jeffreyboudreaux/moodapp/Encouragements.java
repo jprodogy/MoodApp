@@ -16,10 +16,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * Created by jeffreyboudreaux on 4/18/18.
- */
-
 public class Encouragements {
     private Map<Integer, String[]> encMap;
     private String encourage;
@@ -29,7 +25,6 @@ public class Encouragements {
         context = current;
         InputStream ip = context.getResources().openRawResource(R.raw.encouragements);
         BufferedReader bReader = new BufferedReader(new InputStreamReader(ip, Charset.defaultCharset()));
-
         try {
             bReader.readLine();
             String line;
@@ -39,22 +34,18 @@ public class Encouragements {
                 String[] info = line.split(",");
                 encMap.put(i,info);
                 i++;
-
             }
             bReader.close();
 
         }catch (NullPointerException e){
 
         }
-
     }
-
     public void setEnc(int i){
         Random rand = new Random();
         String[] encList = encMap.get(i);
         encourage = encList[rand.nextInt(encList.length)];
     }
-
     public String getEnc(){
         return encourage;
     }

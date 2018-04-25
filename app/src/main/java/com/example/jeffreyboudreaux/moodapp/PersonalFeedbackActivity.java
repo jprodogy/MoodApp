@@ -1,5 +1,4 @@
 package com.example.jeffreyboudreaux.moodapp;
-
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,10 +11,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import java.io.FileNotFoundException;
-
-/**
- * Created by jeffreyboudreaux on 4/18/18.
- */
 
 public class PersonalFeedbackActivity extends AppCompatActivity {
 
@@ -33,7 +28,6 @@ public class PersonalFeedbackActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
-
         TextView encTxt = (TextView) findViewById(R.id.encouragementView);
         TextView feeTxt = (TextView) findViewById(R.id.feedbackView);
 
@@ -45,8 +39,6 @@ public class PersonalFeedbackActivity extends AppCompatActivity {
         }catch (NullPointerException npe){
             Log.w("PersonalFeedbackActvity", "It did not work");
         }
-
-
     }
 
     /*
