@@ -31,7 +31,6 @@ public class Feedback {
         feeMap = new HashMap<>();
 
         try {
-            bReader.readLine();
             String line;
             int i = 0;
             while((line = bReader.readLine()) != null){

@@ -41,6 +41,8 @@ public class PersonalFeedbackActivity extends AppCompatActivity {
             encTxt.setText(RecordMoodActivity.enc.getEnc());
             feeTxt.setText(RecordMoodActivity.fee.getFeed());
 
+            Log.w("MainActivity","created Encouragements & Feedback");
+
         }catch (NullPointerException npe){
             Log.w("PersonalFeedbackActvity", "It did not work");
         }

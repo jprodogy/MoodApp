@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        /*Hello I'm changing something*/
 
     }
 

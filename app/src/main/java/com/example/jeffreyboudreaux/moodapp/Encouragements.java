@@ -28,6 +28,7 @@ public class Encouragements {
     private Context context;
 
     public Encouragements(Context current) throws IOException {
+        encMap = new HashMap<>();
         context = current;
         InputStream ip = context.getResources().openRawResource(R.raw.encouragements);
         BufferedReader bReader = new BufferedReader(new InputStreamReader(ip, Charset.defaultCharset()));
