@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
 public class MoodHistory extends AppCompatActivity {
 
     private ArrayList<String> pastMoods;
