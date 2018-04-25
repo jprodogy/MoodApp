@@ -14,10 +14,6 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-/**
- * Created by jeffreyboudreaux on 4/18/18.
- */
-
 public class Feedback {
     private Map<Integer, String[]> feeMap;
     private String feed;
@@ -41,9 +37,7 @@ public class Feedback {
         }catch (NullPointerException e){
 
         }
-
     }
-
     public void setFeed(int i){
         Random rand = new Random();
         try {
@@ -52,7 +46,6 @@ public class Feedback {
         }catch(NullPointerException e){
 
         }
-
     }
 
     public String getFeed(){
