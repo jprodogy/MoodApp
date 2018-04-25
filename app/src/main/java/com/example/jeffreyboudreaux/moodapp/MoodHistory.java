@@ -1,5 +1,4 @@
 package com.example.jeffreyboudreaux.moodapp;
-
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,9 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-
 public class MoodHistory extends AppCompatActivity {
-
     private ArrayList<String> pastMoods;
     private int amountOfHistory;
     private float yOfMood;
