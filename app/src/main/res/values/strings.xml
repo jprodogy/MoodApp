@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MoodApp</string>
     <string name="action_settings">Settings</string>
+    <string name="strOpeningMssg1">Welcome to Your Mood Tracker</string>
+    <string name="strOpeningMssg2"><i>You\'re doing a great job</i></string>
+
+    <string name="action_record">Record</string>
 </resources>
