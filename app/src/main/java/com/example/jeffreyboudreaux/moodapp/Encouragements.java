@@ -1,5 +1,4 @@
 package com.example.jeffreyboudreaux.moodapp;
-
 import android.content.Context;
 import android.renderscript.ScriptGroup;
 import android.util.Log;
@@ -10,18 +9,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-
-/**
- * Created by jeffreyboudreaux on 4/18/18.
- */
-
 public class Encouragements {
     private Map<Integer, String[]> encMap;
     private String encourage;
@@ -32,7 +25,6 @@ public class Encouragements {
         context = current;
         InputStream ip = context.getResources().openRawResource(R.raw.encouragements);
         BufferedReader bReader = new BufferedReader(new InputStreamReader(ip, Charset.defaultCharset()));
-        encMap = new HashMap<>();
         try {
             String line;
             int i = 0;
@@ -40,24 +32,18 @@ public class Encouragements {
                 String[] info = line.split(",");
                 encMap.put(i,info);
                 i++;
-
             }
-
             bReader.close();
 
         }catch (NullPointerException e){
 
         }
-
     }
-
-    public void setEnc(int i) throws InvocationTargetException{
+    public void setEnc(int i){
         Random rand = new Random();
         String[] encList = encMap.get(i);
         encourage = encList[rand.nextInt(encList.length)];
-
     }
-
     public String getEnc(){
         return encourage;
     }

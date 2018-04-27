@@ -11,7 +11,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -59,7 +61,18 @@ public class RecordMoodActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        /*
+        final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.RDgroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                // checkedId is the RadioButton selected
+                if (group. == true)
+                group.clearCheck();
+            }
+        });
+        */
     }
 
     /*
@@ -96,6 +109,8 @@ public class RecordMoodActivity extends AppCompatActivity {
         }
 
     }
+
+
 
 
 }
