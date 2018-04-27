@@ -17,11 +17,10 @@ import android.widget.RadioGroup;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 
-/**
- * Created by jeffreyboudreaux on 4/10/18.
- */
+import java.util.ArrayList;
+
+import java.lang.reflect.InvocationTargetException;
 
 public class RecordMoodActivity extends AppCompatActivity {
     public static Encouragements enc;
@@ -104,9 +103,15 @@ public class RecordMoodActivity extends AppCompatActivity {
                 enc.setEnc(i);
                 fee.setFeed(i);
                 Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
+                Intent history = new Intent(this, MoodHistory.class);
+                ArrayList<String> pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
+                //HERE IS WHERE WE ADD THE THING
+                history.putStringArrayListExtra("pastMoods", pastMoods);
                 this.startActivity(myIntent);
             }
         }
+
+
 
     }
 
