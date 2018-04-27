@@ -12,9 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Created by jeffreyboudreaux on 4/18/18.
- */
 
 public class Feedback {
     private Map<Integer, String[]> feeMap;
@@ -48,7 +45,6 @@ public class Feedback {
         feed = encList[rand.nextInt(encList.length)];
 
     }
-
 
     public String getFeed(){
         return feed;
