@@ -14,6 +14,8 @@ import android.widget.RadioButton;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+
 public class RecordMoodActivity extends AppCompatActivity {
     public static Encouragements enc;
     public static Feedback fee;
@@ -46,9 +48,15 @@ public class RecordMoodActivity extends AppCompatActivity {
                 enc.setEnc(i);
                 fee.setFeed(i);
                 Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
+                Intent history = new Intent(this, MoodHistory.class);
+                ArrayList<String> pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
+                //HERE IS WHERE WE ADD THE THING
+                history.putStringArrayListExtra("pastMoods", pastMoods);
                 this.startActivity(myIntent);
             }
         }
+
+
 
     }
 
