@@ -3,16 +3,14 @@ package com.example.jeffreyboudreaux.moodapp;
 import android.content.Context;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Feedback {
     private Map<Integer, String[]> feeMap;
@@ -47,6 +45,7 @@ public class Feedback {
 
         }
     }
+
 
     public String getFeed(){
         return feed;
