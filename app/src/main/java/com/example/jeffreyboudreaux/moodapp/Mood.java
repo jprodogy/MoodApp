@@ -25,7 +25,7 @@ public class Mood {
         }else if (i == 8){
             moods.add("Mellow");
         }
-        
+
     }
     public ArrayList getMood(){
         return moods;
