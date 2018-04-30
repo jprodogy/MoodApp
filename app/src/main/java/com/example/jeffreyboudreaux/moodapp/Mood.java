@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Mood {
     private ArrayList<String> moods;
 
+    public Mood(ArrayList<String> moods){
+        moods = this.moods;
+    }
+
     public void addMood(int i){
         if (i == 0){
             moods.add("Happy");
@@ -27,7 +31,10 @@ public class Mood {
         }
 
     }
-    public ArrayList getMood(){
+    public String getMood(int i){
+        return moods.get(i);
+    }
+    public ArrayList<String> getList(){
         return moods;
     }
 
