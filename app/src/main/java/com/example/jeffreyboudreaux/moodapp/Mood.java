@@ -6,10 +6,8 @@ public class Mood {
     private ArrayList<String> moods;
 
     public Mood(){
-
         moods = new ArrayList<>();
     }
-
     public void addMood(int i){
         moods = new ArrayList<>();
         if (i == 0){

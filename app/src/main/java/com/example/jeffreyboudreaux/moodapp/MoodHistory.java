@@ -19,8 +19,6 @@ import java.util.Random;
 public class MoodHistory extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private String MH = "MoodHistory";
     public ArrayList<String> pastMoods;
-    //private int amountOfHistory;
-    //private float yOfMood;
     protected BottomNavigationView navigationView;
     TextView display;
 
@@ -36,13 +34,7 @@ public class MoodHistory extends AppCompatActivity implements BottomNavigationVi
         display = (TextView)findViewById(R.id.moodHistoryDisplay);
         pastMoods = MainActivity.pastMoods;
         printHistory();
-        /*super.onCreate(savedInstanceState);
-        //pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
-        Log.w(MH, "Retrieving past moods");
-        pastMoods = MainActivity.pastMoods;
-        amountOfHistory = pastMoods.size();
-        yOfMood = 100;
-        buildGUI();*/
+
     }
     public void printHistory(){
         Log.w(MH,"On top of print history");
@@ -72,22 +64,5 @@ public class MoodHistory extends AppCompatActivity implements BottomNavigationVi
         return false;
     }
 
-    /*public void buildGUI(){
-        Log.w(MH, "Buidling gui");
-
-        RelativeLayout historyLayout = new RelativeLayout(this);
-        //goes through while loop placing all moods from arraylist into view
-        while(amountOfHistory > 0){
-            TextView mood = new TextView(this);
-            mood.setY(yOfMood);
-            yOfMood += 100;
-            mood.setText(pastMoods.get(amountOfHistory));
-            amountOfHistory--;
-            historyLayout.addView(mood);
-        }
-        setContentView(historyLayout);
-        Log.w(MH, "Built Gui");
-
-    }*/
 
 }
