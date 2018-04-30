@@ -19,22 +19,22 @@ import java.util.Random;
 public class MoodHistory extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private String MH = "MoodHistory";
     public ArrayList<String> pastMoods;
-    protected BottomNavigationView navigationView;
     TextView display;
+    protected BottomNavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.w(MH, "on top of onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moodhistory);
-        navigationView = findViewById(R.id.navigationView);
-        navigationView.setOnNavigationItemSelectedListener(this);
 
         Log.w(MH,"Creating display");
         display = (TextView)findViewById(R.id.moodHistoryDisplay);
         pastMoods = MainActivity.pastMoods;
         printHistory();
 
+        navigationView = findViewById(R.id.navigationView);
+        navigationView.setOnNavigationItemSelectedListener(this);
     }
     public void printHistory(){
         Log.w(MH,"On top of print history");

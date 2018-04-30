@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.lang.reflect.InvocationTargetException;
 
-public class RecordMoodActivity extends AppCompatActivity{
+public class RecordMoodActivity extends AppCompatActivity {
     public static Encouragements enc;
     public static Feedback fee;
     public static Mood moo;

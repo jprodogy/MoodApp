@@ -28,6 +28,8 @@
         </activity>
         <activity android:name=".MoodHistory">
         </activity>
+        <activity android:name=".QuoteResponse">
+        </activity>
 
     </application>
 
