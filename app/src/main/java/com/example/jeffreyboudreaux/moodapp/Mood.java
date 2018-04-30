@@ -6,7 +6,8 @@ public class Mood {
     private ArrayList<String> moods;
 
     public Mood(){
-        moods = this.moods;
+
+        moods = new ArrayList<>();
     }
 
     public void addMood(int i){

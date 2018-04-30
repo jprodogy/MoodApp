@@ -61,7 +61,7 @@ public class RecordMoodActivity extends AppCompatActivity {
             if (btns[i].isChecked()){
                 Log.w("MainActivity", String.valueOf(i));
                 //moo.addMood(i);
-                enc.setEnc(i);
+
                 fee.setFeed(i);
                 Intent PersonalFeedBackIntent = new Intent(this, PersonalFeedbackActivity.class);
                 /*
@@ -70,7 +70,25 @@ public class RecordMoodActivity extends AppCompatActivity {
                 history.putStringArrayListExtra("pastMoods", pastMoods);*/
 
                 pastMoods = MainActivity.pastMoods;
-                pastMoods.add(String.valueOf(btns[i]));
+                if (i == 0){
+                    pastMoods.add("Happy\n");
+                }else if (i == 1){
+                    pastMoods.add("Sad\n");
+                }else if (i == 2){
+                    pastMoods.add("Mad\n");
+                }else if (i == 3){
+                    pastMoods.add("Tired\n");
+                }else if (i == 4){
+                    pastMoods.add("Stressed\n");
+                }else if (i == 5){
+                    pastMoods.add("Depressed\n");
+                }else if (i == 6){
+                    pastMoods.add("Nervous\n");
+                }else if (i == 7){
+                    pastMoods.add("Confused\n");
+                }else if (i == 8){
+                    pastMoods.add("Mellow\n");
+                }
 
                 this.startActivity(PersonalFeedBackIntent);
             }

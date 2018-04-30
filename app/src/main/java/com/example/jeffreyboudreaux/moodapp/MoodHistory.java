@@ -32,6 +32,7 @@ public class MoodHistory extends AppCompatActivity implements BottomNavigationVi
         navigationView = findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
 
+        Log.w(MH,"Creating display");
         display = (TextView)findViewById(R.id.moodHistoryDisplay);
         pastMoods = MainActivity.pastMoods;
         printHistory();
@@ -44,10 +45,14 @@ public class MoodHistory extends AppCompatActivity implements BottomNavigationVi
         buildGUI();*/
     }
     public void printHistory(){
+        Log.w(MH,"On top of print history");
         StringBuilder moodHistoryStringBuilder = new StringBuilder();
         for (int i = 0; i < pastMoods.size()-1 ; i++) {
             moodHistoryStringBuilder.append(pastMoods.get(i));
+            moodHistoryStringBuilder.append("\n");
+            Log.w(MH, pastMoods.get(i));
         }
+        Log.w(MH,"Setting text");
         display.setText(moodHistoryStringBuilder.toString());
     }
     @Override
