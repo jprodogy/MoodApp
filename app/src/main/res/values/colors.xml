@@ -9,4 +9,5 @@
     <color name="colorBar">#967BB6</color>
     <color name="colorNavBackground">#FFFFFF</color>
     <color name="colorIconTint">#606060</color>
+    <color name="colorBackground">#5b98f2</color>
 </resources>
