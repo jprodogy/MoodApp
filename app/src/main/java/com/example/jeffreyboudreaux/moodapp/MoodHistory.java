@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 public class MoodHistory extends AppCompatActivity {
-    private ArrayList<String> pastMoods;
+    public ArrayList<String> pastMoods;
     private int amountOfHistory;
     private float yOfMood;
 
@@ -18,7 +18,8 @@ public class MoodHistory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
+        //pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
+        pastMoods = MainActivity.pastMoods;
         amountOfHistory = pastMoods.size();
         yOfMood = 100;
         buildGUI();

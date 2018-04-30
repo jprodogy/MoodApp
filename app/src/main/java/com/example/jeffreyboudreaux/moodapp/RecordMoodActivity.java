@@ -28,6 +28,8 @@ public class RecordMoodActivity extends AppCompatActivity {
     public static Mood moo;
     RadioButton[] btns = new RadioButton[9];
 
+    public ArrayList<String> pastMoods;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,8 +67,10 @@ public class RecordMoodActivity extends AppCompatActivity {
                 /*
                 Intent history = new Intent(this, MoodHistory.class);
                 ArrayList<String> pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
-                //TODO add to list
                 history.putStringArrayListExtra("pastMoods", pastMoods);*/
+
+                pastMoods = MainActivity.pastMoods;
+                pastMoods.add(String.valueOf(btns[i]));
 
                 this.startActivity(PersonalFeedBackIntent);
             }

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
-    public ArrayList<String> pastMoods;
+    public static ArrayList<String> pastMoods;
 
     protected BottomNavigationView navigationView;
     @Override
@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         pastMoods = new ArrayList<>();
-        Intent history = new Intent(this, RecordMoodActivity.class);
-        history.putStringArrayListExtra("pastMoods", pastMoods);
+        //Intent history = new Intent(this, RecordMoodActivity.class);
+        //history.putStringArrayListExtra("pastMoods", pastMoods);
         navigationView = findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
     }
