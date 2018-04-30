@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class QuoteResponse extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+public abstract class QuoteResponse extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private TextView quote;
     private Random rand;
     private ArrayList<String> quotes;
