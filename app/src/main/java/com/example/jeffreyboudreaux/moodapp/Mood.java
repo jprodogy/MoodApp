@@ -5,11 +5,12 @@ import java.util.ArrayList;
 public class Mood {
     private ArrayList<String> moods;
 
-    public Mood(ArrayList<String> moods){
+    public Mood(){
         moods = this.moods;
     }
 
     public void addMood(int i){
+        moods = new ArrayList<>();
         if (i == 0){
             moods.add("Happy");
         }else if (i == 1){
