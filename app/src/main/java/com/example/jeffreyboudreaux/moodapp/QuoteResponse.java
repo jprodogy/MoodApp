@@ -24,11 +24,10 @@ public class QuoteResponse extends AppCompatActivity implements BottomNavigation
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        navigationView = findViewById(R.id.navigationView);
-        navigationView.setOnNavigationItemSelectedListener(this);
-
         super.onCreate(savedInstanceState);
         quotes = getIntent().getExtras().getStringArrayList("quotes");
+        navigationView = findViewById(R.id.navigationView);
+        navigationView.setOnNavigationItemSelectedListener(this);
         buildGUI();
     }
     public void buildGUI(){
