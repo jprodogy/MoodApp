@@ -59,13 +59,14 @@ public class RecordMoodActivity extends AppCompatActivity {
                 Log.w("MainActivity", String.valueOf(i));
                 enc.setEnc(i);
                 fee.setFeed(i);
-                Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
+                Intent PersonalFeedBackIntent = new Intent(this, PersonalFeedbackActivity.class);
                 /*
                 Intent history = new Intent(this, MoodHistory.class);
                 ArrayList<String> pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
                 //TODO add to list
                 history.putStringArrayListExtra("pastMoods", pastMoods);*/
-                this.startActivity(myIntent);
+
+                this.startActivity(PersonalFeedBackIntent);
             }
         }
 
