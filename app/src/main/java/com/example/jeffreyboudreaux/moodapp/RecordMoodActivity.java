@@ -2,24 +2,12 @@ package com.example.jeffreyboudreaux.moodapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import java.util.ArrayList;
-
 import java.lang.reflect.InvocationTargetException;
 
 public class RecordMoodActivity extends AppCompatActivity {
@@ -27,9 +15,7 @@ public class RecordMoodActivity extends AppCompatActivity {
     public static Feedback fee;
     public static Mood moo;
     RadioButton[] btns = new RadioButton[9];
-
     public ArrayList<String> pastMoods;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +31,6 @@ public class RecordMoodActivity extends AppCompatActivity {
         btns[7] = (RadioButton) findViewById(R.id.confusedButton);
         btns[8] = (RadioButton) findViewById(R.id.mellowButton);
 
-
         try {
             enc = new Encouragements(this);
             fee = new Feedback(this);
@@ -55,7 +40,6 @@ public class RecordMoodActivity extends AppCompatActivity {
         }
     }
 
-
     public void MoodSelect(View v) throws InvocationTargetException {
         for (int i = 0; i < btns.length; i++) {
             if (btns[i].isChecked()){
@@ -64,8 +48,6 @@ public class RecordMoodActivity extends AppCompatActivity {
                 fee.setFeed(i);
                 enc.setEnc(i);
                 Intent PersonalFeedBackIntent = new Intent(this, PersonalFeedbackActivity.class);
-
-
                 pastMoods = MainActivity.pastMoods;
                 if (i == 0){
                     pastMoods.add("Happy\n");
@@ -90,8 +72,6 @@ public class RecordMoodActivity extends AppCompatActivity {
                 this.startActivity(PersonalFeedBackIntent);
             }
         }
-
-
 
     }
 
