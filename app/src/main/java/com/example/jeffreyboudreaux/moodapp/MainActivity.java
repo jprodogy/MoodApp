@@ -10,17 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-
     public static ArrayList<String> pastMoods;
-
     protected BottomNavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         pastMoods = new ArrayList<>();
-        //Intent history = new Intent(this, RecordMoodActivity.class);
-        //history.putStringArrayListExtra("pastMoods", pastMoods);
         navigationView = findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
     }
