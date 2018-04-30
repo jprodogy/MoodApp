@@ -185,7 +185,8 @@
         android:layout_alignStart="@+id/happyEmojiPic"
         android:layout_below="@+id/happyEmojiPic"
         android:layout_marginStart="32dp"
-        android:id="@+id/happyButton" />
+        android:id="@+id/happyButton"
+        android:onClick="onRadioButtonClicked"/>
 
 
     <RadioButton
@@ -193,28 +194,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/sadEmojiPic"
-        android:layout_marginLeft="184dp" />
+        android:layout_marginLeft="184dp"
+        android:onClick="onRadioButtonClicked"/>
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/angryButton"
         android:layout_below="@+id/depressedEmojiPic"
-        android:id="@+id/depressedButton" />
+        android:id="@+id/depressedButton"
+        android:onClick="onRadioButtonClicked"/>
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_marginLeft="184dp"
-        android:id="@+id/stressedButton" />
+        android:id="@+id/stressedButton"
+        android:onClick="onRadioButtonClicked"/>
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/happyButton"
         android:layout_below="@+id/tiredEmojiPic"
-        android:id="@+id/tiredButton" />
+        android:id="@+id/tiredButton"
+        android:onClick="onRadioButtonClicked"/>
 
     <RadioButton
         android:layout_width="wrap_content"
@@ -222,28 +227,32 @@
         android:layout_alignStart="@+id/angryEmojiPic"
         android:layout_below="@+id/angryEmojiPic"
         android:layout_marginStart="34dp"
-        android:id="@+id/angryButton" />
+        android:id="@+id/angryButton"
+        android:onClick="onRadioButtonClicked"/>
 
     <RadioButton
         android:id="@+id/mellowButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/depressedButton"
-        android:layout_below="@+id/mellowEmojiPic" />
+        android:layout_below="@+id/mellowEmojiPic"
+        android:onClick="onRadioButtonClicked"/>
 
     <RadioButton
         android:id="@+id/nervousButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/tiredButton"
-        android:layout_below="@+id/nervousEmojiPic" />
+        android:layout_below="@+id/nervousEmojiPic"
+        android:onClick="onRadioButtonClicked"/>
 
     <RadioButton
         android:id="@+id/confusedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="184dp"
-        android:layout_below="@+id/confusedEmojiPic" />
+        android:layout_below="@+id/confusedEmojiPic"
+        android:onClick="onRadioButtonClicked"/>
 
     <Button
         android:layout_width="wrap_content"

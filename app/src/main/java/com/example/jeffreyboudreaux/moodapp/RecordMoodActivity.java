@@ -60,10 +60,11 @@ public class RecordMoodActivity extends AppCompatActivity {
                 enc.setEnc(i);
                 fee.setFeed(i);
                 Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
+                /*
                 Intent history = new Intent(this, MoodHistory.class);
                 ArrayList<String> pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
                 //TODO add to list
-                history.putStringArrayListExtra("pastMoods", pastMoods);
+                history.putStringArrayListExtra("pastMoods", pastMoods);*/
                 this.startActivity(myIntent);
             }
         }
@@ -72,6 +73,95 @@ public class RecordMoodActivity extends AppCompatActivity {
 
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.happyButton:
+                if (checked)
+                    for (int i = 0; i < btns.length; i++) {
+                        if (btns[0] != btns[i]){
+                            btns[i].setChecked(false);
+                            Log.w("MainActivity", "It worked");
+                        }
+                    }
+                    break;
+            case R.id.sadButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[1] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+            case R.id.angryButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[2] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+            case R.id.tiredButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[3] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+            case R.id.stressedButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[4] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+            case R.id.depressedButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[5] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+            case R.id.nervousButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[6] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+            case R.id.confusedButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[7] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+            case R.id.mellowButton:
+                if (checked)
+                    if (checked)
+                        for (int i = 0; i < btns.length; i++) {
+                            if (btns[8] != btns[i]){
+                                btns[i].setChecked(false);
+                            }
+                        }
+                    break;
+        }
+    }
 
 
 
