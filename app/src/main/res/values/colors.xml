@@ -10,4 +10,5 @@
     <color name="colorNavBackground">#FFFFFF</color>
     <color name="colorIconTint">#606060</color>
     <color name="colorBackground">#5b98f2</color>
+    <color name="colorText">#eded08</color>
 </resources>

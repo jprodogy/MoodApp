@@ -60,7 +60,7 @@ public class RecordMoodActivity extends AppCompatActivity {
         for (int i = 0; i < btns.length; i++) {
             if (btns[i].isChecked()){
                 Log.w("MainActivity", String.valueOf(i));
-                moo.addMood(i);
+                //moo.addMood(i);
                 enc.setEnc(i);
                 fee.setFeed(i);
                 Intent PersonalFeedBackIntent = new Intent(this, PersonalFeedbackActivity.class);
