@@ -25,6 +25,7 @@ import java.lang.reflect.InvocationTargetException;
 public class RecordMoodActivity extends AppCompatActivity {
     public static Encouragements enc;
     public static Feedback fee;
+    public static Mood moo;
     RadioButton[] btns = new RadioButton[9];
 
     public ArrayList<String> pastMoods;
@@ -59,6 +60,7 @@ public class RecordMoodActivity extends AppCompatActivity {
         for (int i = 0; i < btns.length; i++) {
             if (btns[i].isChecked()){
                 Log.w("MainActivity", String.valueOf(i));
+                moo.addMood(i);
                 enc.setEnc(i);
                 fee.setFeed(i);
                 Intent PersonalFeedBackIntent = new Intent(this, PersonalFeedbackActivity.class);
