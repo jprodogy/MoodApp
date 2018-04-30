@@ -29,10 +29,12 @@ public class MoodHistory extends AppCompatActivity implements BottomNavigationVi
         Log.w(MH, "on top of onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moodhistory);
-
         navigationView = findViewById(R.id.navigationView);
         navigationView.setOnNavigationItemSelectedListener(this);
 
+        display = (TextView)findViewById(R.id.moodHistoryDisplay);
+        pastMoods = MainActivity.pastMoods;
+        printHistory();
         /*super.onCreate(savedInstanceState);
         //pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
         Log.w(MH, "Retrieving past moods");
@@ -40,15 +42,11 @@ public class MoodHistory extends AppCompatActivity implements BottomNavigationVi
         amountOfHistory = pastMoods.size();
         yOfMood = 100;
         buildGUI();*/
-        display = (TextView)findViewById(R.id.moodHistoryDisplay);
-        pastMoods = MainActivity.pastMoods;
-        printHistory();
     }
-
     public void printHistory(){
         StringBuilder moodHistoryStringBuilder = new StringBuilder();
-        for (String s : pastMoods) {
-            moodHistoryStringBuilder.append(s + "\n");
+        for (int i = 0; i < pastMoods.size()-1 ; i++) {
+            moodHistoryStringBuilder.append(pastMoods.get(i));
         }
         display.setText(moodHistoryStringBuilder.toString());
     }
