@@ -1,4 +1,5 @@
 package com.example.jeffreyboudreaux.moodapp;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,14 +11,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import java.util.ArrayList;
+
+import java.lang.reflect.InvocationTargetException;
+
 public class RecordMoodActivity extends AppCompatActivity {
     public static Encouragements enc;
     public static Feedback fee;
     RadioButton[] btns = new RadioButton[9];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,25 +41,38 @@ public class RecordMoodActivity extends AppCompatActivity {
         btns[6] = (RadioButton) findViewById(R.id.nervousButton);
         btns[7] = (RadioButton) findViewById(R.id.confusedButton);
         btns[8] = (RadioButton) findViewById(R.id.mellowButton);
+
+
         try {
             enc = new Encouragements(this);
             fee = new Feedback(this);
-            Log.w("MainActivity","created Encouragements & Feedback");
+            Log.w("MainActivity", "created Encouragements & Feedback");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void MoodSelect(View v){
-        for (int i = 0; i < btns.length - 1; i++) {
+
+
+    public void MoodSelect(View v) throws InvocationTargetException {
+        for (int i = 0; i < btns.length; i++) {
             if (btns[i].isChecked()){
+                Log.w("MainActivity", String.valueOf(i));
                 enc.setEnc(i);
                 fee.setFeed(i);
                 Intent myIntent = new Intent(this, PersonalFeedbackActivity.class);
+                Intent history = new Intent(this, MoodHistory.class);
+                ArrayList<String> pastMoods = getIntent().getExtras().getStringArrayList("pastMoods");
+                //TODO add to list
+                history.putStringArrayListExtra("pastMoods", pastMoods);
                 this.startActivity(myIntent);
             }
         }
 
+
+
     }
+
+
 
 
 }
