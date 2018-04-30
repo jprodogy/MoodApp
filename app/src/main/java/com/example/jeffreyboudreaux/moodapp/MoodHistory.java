@@ -17,12 +17,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class MoodHistory extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
-    public ArrayList<String> pastMoods;
-    private int amountOfHistory;
-    private float yOfMood;
-
     private String MH = "MoodHistory";
+    public ArrayList<String> pastMoods;
+    //private int amountOfHistory;
+    //private float yOfMood;
     protected BottomNavigationView navigationView;
+    TextView display;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,22 +40,17 @@ public class MoodHistory extends AppCompatActivity implements BottomNavigationVi
         amountOfHistory = pastMoods.size();
         yOfMood = 100;
         buildGUI();*/
-
+        display = (TextView)findViewById(R.id.moodHistoryDisplay);
         pastMoods = MainActivity.pastMoods;
-        buildGUI();
+        printHistory();
     }
 
-
-    public void buildGUI(){
-        RelativeLayout moodHistoryScreen = new RelativeLayout(this);
-
-        history = new TextView(this);
-        quote.setText(quotes.get(rand.nextInt(quotes.size())));
-        quote.setX(500);
-        quote.setY(500);
-        quoteScreen.addView(quote)
-        ;
-        setContentView(quoteScreen);
+    public void printHistory(){
+        StringBuilder moodHistoryStringBuilder = new StringBuilder();
+        for (String s : pastMoods) {
+            moodHistoryStringBuilder.append(s + "\n");
+        }
+        display.setText(moodHistoryStringBuilder.toString());
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
