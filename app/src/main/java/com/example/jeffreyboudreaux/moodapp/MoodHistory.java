@@ -14,6 +14,7 @@ public class MoodHistory extends AppCompatActivity {
     private int amountOfHistory;
     private float yOfMood;
 
+    //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
