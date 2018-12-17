@@ -23,7 +23,7 @@
         app:itemBackground="@color/colorNavBackground"
         app:itemTextColor="@color/colorMainText"
 
-        app:menu="@menu/nav"/>
+        app:menu="@menu/nav" />
 
     <TextView
         android:id="@+id/encouragementView"

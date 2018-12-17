@@ -1,5 +1,7 @@
 package com.example.jeffreyboudreaux.moodapp;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -31,4 +33,23 @@ public class PersonalFeedbackActivity extends AppCompatActivity {
             Log.w("PersonalFeedbackActvity", "It did not work");
         }
     }
+
+    /*
+    @Override
+    public boolean onNavigationItemSelect(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.nav_addRecord:
+                startActivity(new Intent(this, RecordMoodActivity.class));
+                return true;
+            case R.id.nav_viewRecords:
+                startActivity(new Intent(this, MoodHistory.class));
+                return true;
+            case R.id.nav_homepage:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+        }
+        return false;
+    }
+    */
 }
